@@ -164,4 +164,4 @@ When adding new components or modifying existing ones:
 
 ## License
 
-[Add your license information here]
+MIT License - see [LICENSE](LICENSE) file for details.
