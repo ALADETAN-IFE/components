@@ -164,4 +164,6 @@ When adding new components or modifying existing ones:
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file for details.
+MIT License
+
+Copyright (c) 2025 ALADETAN-IFE(IFECODES) - see [LICENSE](LICENSE) file for full details.
