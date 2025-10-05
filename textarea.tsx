@@ -12,7 +12,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     const textareaId = React.useId()
     
     return (
-      <div className="space-y-2">
+      <div className="space-y-2" title={label}>
         {label && (
           <label 
             htmlFor={textareaId}
