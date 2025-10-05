@@ -1,4 +1,5 @@
 import * as React from "react"
+import { IoMdCloudUpload } from "react-icons/io"
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -12,7 +13,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const inputId = React.useId()
     
     return (
-      <div className="space-y-2">
+      <div className="space-y-2" title={label}>
         {label && (
           <label 
             htmlFor={inputId}
@@ -24,6 +25,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <input
           type={type}
           id={inputId}
+          hidden={type == "file"}
           className={`
             flex h-10 w-full rounded-md border border-foreground/20 bg-background px-3 py-2 text-sm text-foreground 
             placeholder:text-foreground/50 focus:outline-none focus:ring-2 focus:ring-foreground/50 
@@ -44,6 +46,13 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             {helperText}
           </p>
         )}
+        {
+          type == "file" && props.accept && (
+            <label htmlFor={inputId} className="flex items-center gap-2 w-max text-sm text-foreground/70 cursor-pointer border border-foreground/20 rounded-md px-3 py-2 hover:bg-foreground/10">
+              <IoMdCloudUpload size={30} className="cursor-pointer" />
+            </label >
+          )
+        }
       </div>
     )
   }
