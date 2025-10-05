@@ -49,7 +49,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {
           type == "file" && props.accept && (
             <label htmlFor={inputId} className="flex items-center gap-2 w-max text-sm text-foreground/70 cursor-pointer border border-foreground/20 rounded-md px-3 py-2 hover:bg-foreground/10">
-              <IoMdCloudUpload size={30} className="cursor-pointer" />
+              <IoMdCloudUpload size={24} className="cursor-pointer" />
             </label >
           )
         }
