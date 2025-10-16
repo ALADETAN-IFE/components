@@ -102,7 +102,8 @@ import { Textarea } from "./textarea"
 <Textarea 
   label="Bio" 
   helperText="Tell us about yourself (max 500 characters)" 
-  maxLength={500}/>
+  maxLength={500}
+/>
 ```
 
 ## Styling
@@ -147,6 +148,10 @@ Components can be customized in several ways:
 - TypeScript
 - Tailwind CSS
 
+## Installation
+
+These components assume you have React, TypeScript, and Tailwind CSS already set up in your project. Simply copy the component files into your project and import them as needed.
+
 ## 🚀 Quick Start
 
 Follow these steps to get the project running locally.
@@ -158,9 +163,6 @@ cd components
 
 # Install project dependencies
 npm install
-
-# If you need icons, install react-icons (optional)
-npm install react-icons
 
 # If you have a cached submodule reference you want to remove (keeps working-tree files):
 git rm --cached src/components
@@ -174,7 +176,6 @@ npm run dev
 
 Notes:
 - These components assume you already have a React + TypeScript + Tailwind setup in your app. If not, set those up first.
-- Installing react-icons is optional and only required if you use icons from that package.
 
 ## Contributing
 
