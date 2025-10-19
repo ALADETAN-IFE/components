@@ -7,7 +7,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className = "", variant = "default", size = "default", ...props }, ref) => {
+  ({ className = "", variant = "default", size = "default", asChild, ...props }, ref) => {
     const baseClasses = "inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
     
     const variantClasses = {
@@ -27,6 +27,22 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     }
     
     const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`
+
+    const { children, ...rest } = props as any
+
+    // If asChild is true and a valid React element is provided as child,
+    // clone that element and merge Button classes/props onto it. This
+    // prevents rendering a native <button> inside an <a> (invalid HTML).
+    if (asChild && React.isValidElement(children)) {
+      const child = children as React.ReactElement<any>
+      const childClassName = (child.props && child.props.className) || ""
+      const cloned = React.cloneElement(child, {
+        className: `${classes} ${childClassName}`.trim(),
+        ref,
+        ...rest,
+      })
+      return cloned
+    }
     
     return (
       <button
