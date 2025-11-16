@@ -95,6 +95,30 @@ import { Input } from "./input"
 />
 ```
 
+#### File input and icons
+
+The `Input` component uses an upload icon from the `react-icons` package when `type="file"` and an `accept` prop is provided. This keeps the component lightweight while providing a clear affordance for file uploads.
+
+Example (you'll need to have `react-icons` installed in your project):
+
+```tsx
+import { Input } from "./input"
+// the component itself imports and uses IoMdCloudUpload internally when type="file"
+
+<Input
+  label="Upload avatar"
+  type="file"
+  accept="image/*"
+  helperText="PNG, JPG up to 2MB"
+/> 
+```
+
+Install `react-icons` with:
+
+```bash
+npm install react-icons
+```
+
 ### Textarea
 
 A customizable textarea component with the same features as the Input component.
@@ -175,6 +199,7 @@ Components can be customized in several ways:
 - React 18+
 - TypeScript
 - Tailwind CSS
+- react-icons (for small UI icons used inside components)
 
 ## Installation
 
