@@ -35,6 +35,28 @@ import { Button } from "./button"
 </Button>
 ```
 
+### asChild usage
+
+If you want the `Button` styling and behavior applied to another element (for example an anchor or a routing `Link`), use the `asChild` prop. The `Button` will clone the provided child and merge classes/props onto it.
+
+```tsx
+// Anchor rendered with Button styles
+<Button asChild>
+  <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+    External link
+  </a>
+</Button>;
+
+// Next.js Link (example)
+import Link from "next/link";
+
+<Button asChild>
+  <Link href="/about">About</Link>
+</Button>;
+```
+
+Note: `asChild` expects a single valid React element as the Button's child. It clones that element and applies the button classes/props to it.
+
 ### Input
 
 A flexible input component with label, error, and helper text support.
