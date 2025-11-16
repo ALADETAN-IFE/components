@@ -9,6 +9,7 @@ A collection of reusable React components built with TypeScript and Tailwind CSS
 A versatile button component with multiple variants and sizes.
 
 **Features:**
+
 - Multiple variants: `default`, `destructive`, `outline`, `secondary`, `ghost`, `link`
 - Multiple sizes: `default`, `sm`, `lg`, `icon`
 - Full accessibility support with proper focus states
@@ -16,6 +17,7 @@ A versatile button component with multiple variants and sizes.
 - Extends native button HTML attributes
 
 **Usage:**
+
 ```tsx
 import { Button } from "./button"
 
@@ -38,6 +40,7 @@ import { Button } from "./button"
 A flexible input component with label, error, and helper text support.
 
 **Features:**
+
 - Optional label with proper accessibility
 - Error state with custom error messages
 - Helper text for additional context
@@ -46,6 +49,7 @@ A flexible input component with label, error, and helper text support.
 - Tailwind CSS styling with focus states
 
 **Usage:**
+
 ```tsx
 import { Input } from "./input"
 
@@ -56,16 +60,16 @@ import { Input } from "./input"
 <Input label="Email Address" type="email" />
 
 // With error state
-<Input 
-  label="Password" 
-  type="password" 
-  error="Password must be at least 8 characters" 
+<Input
+  label="Password"
+  type="password"
+  error="Password must be at least 8 characters"
 />
 
 // With helper text
-<Input 
-  label="Username" 
-  helperText="Must be unique and contain only letters and numbers" 
+<Input
+  label="Username"
+  helperText="Must be unique and contain only letters and numbers"
 />
 ```
 
@@ -74,6 +78,7 @@ import { Input } from "./input"
 A customizable textarea component with the same features as the Input component.
 
 **Features:**
+
 - Optional label with proper accessibility
 - Error state with custom error messages
 - Helper text for additional context
@@ -83,6 +88,7 @@ A customizable textarea component with the same features as the Input component.
 - Full TypeScript support with extended HTML textarea attributes
 
 **Usage:**
+
 ```tsx
 import { Textarea } from "./textarea"
 
@@ -93,15 +99,15 @@ import { Textarea } from "./textarea"
 <Textarea label="Description" rows={4} />
 
 // With error state
-<Textarea 
-  label="Comments" 
-  error="This field is required" 
+<Textarea
+  label="Comments"
+  error="This field is required"
 />
 
 // With helper text
-<Textarea 
-  label="Bio" 
-  helperText="Tell us about yourself (max 500 characters)" 
+<Textarea
+  label="Bio"
+  helperText="Tell us about yourself (max 500 characters)"
   maxLength={500}
 />
 ```
@@ -154,28 +160,32 @@ These components assume you have React, TypeScript, and Tailwind CSS already set
 
 ## 🚀 Quick Start
 
-Follow these steps to get the project running locally.
+This repository contains standalone component source files (TypeScript + Tailwind CSS) and does not include a `package.json`, build scripts, or automated tests. Use one of the options below to run or preview the components locally.
+
+Option A — Add to an existing project
+
+1. Copy the `.tsx` files and `style.css` into your existing React + TypeScript + Tailwind project.
+2. Import the components where needed and run your app as usual (for example, `npm run dev` in your app).
+
+Option B — Create a small local playground (recommended if you don't have an existing app)
 
 ```bash
-# Clone repository
-git clone https://github.com/ALADETAN-IFE/components.git
-cd components
-
-# Install project dependencies
+# Create a Vite React + TypeScript playground
+npm create vite@latest components-playground -- --template react-ts
+cd components-playground
 npm install
 
-# If you have a cached submodule reference you want to remove (keeps working-tree files):
-git rm --cached src/components
+# Copy component files (button.tsx, input.tsx, textarea.tsx, typography.tsx, style.css) into src/
+# Install Tailwind CSS in the playground (follow Tailwind's Vite setup guide)
 
-# Add styles: copy the contents of style.css into your app's index (or import it)
-# (e.g., import './style.css' in your index.tsx / index.js)
-
-# Run the development server
+# Start the dev server
 npm run dev
 ```
 
 Notes:
-- These components assume you already have a React + TypeScript + Tailwind setup in your app. If not, set those up first.
+
+- The easiest path is to add these files to an existing project that already has React/TypeScript/Tailwind configured.
+- If you add scripts or tests to this repo, please document them in `CONTRIBUTING.md` and include how to run them.
 
 ## Contributing
 
@@ -186,6 +196,8 @@ When adding new components or modifying existing ones:
 3. Ensure accessibility standards are met
 4. Include proper error handling and validation
 5. Update this README with usage examples
+
+For repository-specific contribution guidelines and the full process for submitting issues and pull requests, see the CONTRIBUTING guide: [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## License
 
