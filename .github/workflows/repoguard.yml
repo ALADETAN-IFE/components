@@ -1,0 +1,28 @@
+# RepoGuard Pre-Execution Security Gate
+# Automatically scans code, dependencies, and PR diffs for malware, backdoors, and secrets
+# before arbitrary build or test scripts are executed in CI.
+# https://github.com/marketplace/actions/repoguard-security-scan
+
+name: "RepoGuard Security Gate"
+
+on:
+  push:
+    branches: ["main", "master"]
+  pull_request:
+    branches: ["main", "master"]
+
+jobs:
+  repoguard-security-scan:
+    name: RepoGuard Pre-Execution Security Gate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v6
+
+      - name: Run RepoGuard Security Check
+        uses: ALADETAN-IFE/repoguard-action@1f5947a155f654749155b712564e6cb0c45e63d7 # v1
+        with:
+          minimum-severity: "medium"
+          fail-on: "high"
